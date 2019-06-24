@@ -39,7 +39,8 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (res) {
             var results = res.data;
-            console.log(res.data)
-        }    
-    };
+            console.log(res.data);
+  
+        }   
+    }; 
 });

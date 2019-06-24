@@ -1,0 +1,13 @@
+button,
+div,
+form,
+input {
+  margin: 10px;
+}
+
+.wrap {
+  padding: 1em 0.1em;
+  margin-bottom:5px ;
+  margin-top:10px; 
+}
+
