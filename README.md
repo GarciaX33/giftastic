@@ -11,3 +11,4 @@
     * Visual Studio Code
     * Git
     * GitHub Pages
+    * Giphy API

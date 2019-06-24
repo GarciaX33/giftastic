@@ -6,8 +6,12 @@ input {
 }
 
 .wrap {
-  padding: 1em 0.1em;
-  margin-bottom:5px ;
+  padding: 10px;
+  margin-bottom:15px ;
   margin-top:10px; 
+}
+
+body {
+  text-align: center;
 }
 
