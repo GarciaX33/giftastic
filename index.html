@@ -7,29 +7,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Giftastic</title>
 </head>
 
 <body>
-<div class="container">
-    <div class="jumbotron">
-        <h1>Giftastic Giphy API</h1>
+    <div class="container">
+        <div class="jumbotron">
+
+
+            <div id="buttonsDisplay"></div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <form id="giphy-form">
+                        <label for="giphyInput">Add a Animal!</label>
+                        <input type="text" id="giphyInput"><br>
+
+
+                        <input id="addTopic" type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="giphysDisplay"></div>
     </div>
-
-    <div id="buttonsDisplay"></div>
-
-    <form id="giphy-form">
-        <label for="giphyInput">Add a giphy!</label>
-        <input type="text" id="giphyInput"><br>
-
-
-        <input id="addTopic" type="submit" value="Submit">
-    </form>
-
-
-    <div id="giphysDisplay"></div>
-</div>
     <!-- JQUERY -->
     <script src="assets/js/jquery-3.4.1.js"></script>
     <!-- JS -->

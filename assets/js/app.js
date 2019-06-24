@@ -28,7 +28,7 @@ $(document).ready(function () {
     });
 
 
-
+    //will initialize displlayGiphyApi function to call on giphy api to return gifs with a limit of 10 onto display
     function displayGiphyApi() {
         $('#giphysDisplay').empty('');
         var topic = $(this).attr("data-name");
@@ -39,8 +39,41 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (res) {
             var results = res.data;
-            console.log(res.data);
-  
-        }   
-    }; 
+
+            for (var i = 0; i < results.length; i++) {
+
+                if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+
+                    var rating = results[i].rating;
+                    var p = $("<p>").html("Rating: " + rating);
+                    var image = $('<img>');
+
+                    image.attr('src', results[i].images.fixed_height_still.url);
+                    image.attr('data-still', results[i].images.fixed_height_still.url)
+                    image.attr('data-animate', results[i].images.fixed_height.url)
+                    image.attr('data-move', 'still')
+                    $("#giphysDisplay").append(p);
+                    $("#giphysDisplay").append(image);
+                    //will display rating and gif image after the loop on #giphysDisplay
+                }
+
+            }
+        });
+
+    }
+    // document on click function for the gifs to determine if the gif is still or animated
+    $(document).on("click", "img", function () {
+
+        if ($(this).attr('data-move') === 'still') {
+            $(this).attr('src', $(this).attr('data-animate'))
+            $(this).attr('data-move', 'animate')
+        } else {
+            $(this).attr('src', $(this).attr('data-still'));
+            $(this).attr('data-move', 'still')
+        }
+    })
+
+
+    $(document).on("click", ".giphy", displayGiphyApi);
+
 });
